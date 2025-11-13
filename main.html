@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Construction Site ID</title>
+  <link rel="stylesheet" href="main.css">
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+</head>
+
+<body>
+
+  <div class="id-container">
+    <!-- ID Card -->
+    <div class="id-card">
+
+      <div class="id-header">
+        <img src="img/Freja-eID-nyckeln-new-e1575296319895 (1).png" alt="Company Logo" class="company-logo">
+        <h2 class="company-name"> </h2>
+      </div>
+
+      <div class="id-photo">
+        <img src="img/images.jpeg" alt="Worker Photo" id="profile-photo">
+      </div>
+
+      <div class="id-info">
+        <h3 class="id-name">August Sandberg</h3>
+        <p class="id-role"></p>
+        <p class="id-age">Age: 18</p>
+        <p class="id-number">070910-5670</p>
+      </div>
+
+    <div class="id-qr">
+    <div id="qrcode"></div>
+    <div class="timer">Next QR refresh in <span id="countdown">10</span> seconds</div>
+    </div>
+
+      <div class="id-footer">
+        <p></p>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    const qrContainer = document.getElementById("qrcode");
+    const countdownEl = document.getElementById("countdown");
+
+    let timer = 10;
+    let qr;
+
+    // Generate a new QR code
+    function generateQR() {
+      const timestamp = new Date().toISOString();
+      const data = {
+        id: "CON-2025-001",
+        name: "Alice Erikson",
+        role: "Site Engineer",
+        issued: timestamp
+      };
+
+      qrContainer.innerHTML = ""; // clear old code
+      qr = new QRCode(qrContainer, {
+        text: JSON.stringify(data),
+        width: 120,
+        height: 120,
+        colorDark: "#000000",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.M
+      });
+
+      console.log("QR updated:", data);
+    }
+
+    // Countdown + QR refresh loop
+    function startTimer() {
+      setInterval(() => {
+        timer--;
+        if (timer <= 0) {
+          timer = 10;
+          generateQR();
+        }
+        countdownEl.textContent = timer;
+      }, 1000);
+    }
+
+    // Start on page load
+    generateQR();
+    startTimer();
+  </script>
+
+</body>
+
+</html>

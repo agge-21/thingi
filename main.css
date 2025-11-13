@@ -1,0 +1,127 @@
+/* Base styles */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #e6eef7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1000px;
+
+}
+
+strong {
+  font-weight: 1;
+  font-size: 18px;
+  
+}
+/* ID card container */
+.id-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Card layout */
+.id-card {
+  width: 320px;
+  height: 650px;
+  background: linear-gradient(180deg, #0059b2, #0088ff);
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  position: relative;
+}
+
+/* Header (logo + company name) */
+.id-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0px;
+}
+
+.company-logo {
+  width: 150px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.company-name {
+  margin: 5px 0 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Photo area */
+.id-photo img {
+  width: 220px;
+  height: 250px;
+  border-radius: 10px;
+  object-fit: cover;
+  
+  margin-top: 0px;
+}
+
+/* Info section */
+.id-info {
+  margin-top: 5px;
+  line-height: 0.6;
+}
+
+.id-name {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.id-role {
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+.id-age, .id-number {
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+/* QR Code */
+.id-qr {
+  margin-top: 2px;
+}
+
+.id-qr img {
+  width: 120px;
+  height: 120px;
+  margin-left: auto;
+  margin-right: auto;
+  border: solid 10px white ;
+  border-radius: 10px;
+}
+
+/* Footer */
+.id-footer {
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 12px;
+  opacity: 0.9;
+}
+  .id-footer {
+      position: absolute;
+      bottom: 15px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 12px;
+      opacity: 0.9;
+    }
+
+    .timer {
+      margin-top: 10px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.85);
+    }
